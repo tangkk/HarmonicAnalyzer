@@ -25,7 +25,7 @@ fftAmpSpec(2:end-1) = 2*fftAmpSpec(2:end-1);
 fftAmpSpec = normalize(fftAmpSpec);
 fftAmpSpec = noisegate(fftAmpSpec, 0);
 
-[pks,locs] = findpeaks(fftAmpSpec,f,'MinPeakHeight', 0.04, 'MinPeakDistance', 30);
+[pks,locs] = findpeaks(fftAmpSpec,f,'MinPeakHeight', 0.02, 'MinPeakDistance', 30);
 pitchPeaks = freq2pitchclass(locs);
 for i = 1:1:length(pitchPeaks)
     display([pitch2name(pitchPeaks(i)) ' ' num2str(locs(i)) ' ' num2str(locs(i)/locs(1))]);
