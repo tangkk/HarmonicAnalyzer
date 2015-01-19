@@ -1,6 +1,6 @@
 function spectrumAnalyze(file)
 
-root = 'd:\Documents\REAPER Media';
+root = '..\NoteSamples';
 path = [root '\' file];
 
 display(path);
@@ -10,7 +10,7 @@ song = toMono(song);
 
 songLength = length(song);
 NFFT = 2^nextpow2(songLength);
-fftSong = fft(song,NFFT);
+fftSong = fft(song, NFFT);
 f = fs/2*linspace(0,1,NFFT/2+1);
 
 % "The signal is real-valued and has even length.
